@@ -1,6 +1,6 @@
 import java.io.File;
 
-import javax.xml.parsers.DocumentBuilder;							// XML parser in Java
+import javax.xml.parsers.DocumentBuilder;		// XML parser in Java
 import javax.xml.parsers.DocumentBuilderFactory;
 
 import org.w3c.dom.Document;
@@ -14,10 +14,10 @@ public class XML_parser {
 		int d1 = Integer.parseInt(args[1]);
 		DocumentBuilderFactory dbf = DocumentBuilderFactory.newInstance();	// Create an instance to DocumentBuilderFactory package
 		DocumentBuilder db = dbf.newDocumentBuilder();
-		Document document = db.parse(new File("session.xml"));				// select xml file to be parsed
+		Document document = db.parse(new File("session.xml"));		// select xml file to be parsed
 		
-		Node rootNode = document.getDocumentElement();						// Package specific oo data type
-		NodeList Sessiontrack = rootNode.getChildNodes();					// Package specific oo data type
+		Node rootNode = document.getDocumentElement();			// Package specific oo data type
+		NodeList Sessiontrack = rootNode.getChildNodes();		// Package specific oo data type
 
 		for(int i=1;i<Sessiontrack.getLength();i=i+2){
 			
@@ -41,9 +41,9 @@ public class XML_parser {
 					Node click = Clicks.item(k);
 				
 					String str1 = click.getAttributes().getNamedItem("starttime").getNodeValue();	// Explore through tag attributes
-					String str2 = click.getAttributes().getNamedItem("endtime").getNodeValue();		// Explore through tag attributes
+					String str2 = click.getAttributes().getNamedItem("endtime").getNodeValue();	// Explore through tag attributes
 
-					String minutes = str1.substring(3, 5);											// Select specific values
+					String minutes = str1.substring(3, 5);		// Select specific values
 					int m = Integer.parseInt(minutes)*60;
 					String seconds = str1.substring(6);
 					double s = Double.parseDouble(seconds);
