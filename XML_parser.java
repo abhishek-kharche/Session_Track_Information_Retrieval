@@ -7,7 +7,7 @@ import org.w3c.dom.Document;
 import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
 
-public class demo {
+public class XML_parser {
 
 	public static void main(String[] args) throws Exception {
 		int d = Integer.parseInt(args[0]);
